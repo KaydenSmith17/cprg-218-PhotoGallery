@@ -1,0 +1,121 @@
+/* --------------------------------------------------
+   Global Styles
+----------------------------------------------------- */
+body {
+    font-family: sans-serif;
+    background-color: #f3eded;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* --------------------------------------------------
+     Header
+  ----------------------------------------------------- */
+    header.header-container {
+        background-color: #120323;
+        color: #97bf04;
+        text-align: center;
+        padding: 1.5rem;
+  
+  }
+  
+  
+  header h1
+  header img {
+    border-bottom: 10px solid #97bf04;
+  }
+  
+  /* --------------------------------------------------
+     Navigation
+  ----------------------------------------------------- */
+  nav {
+    background-color: #d9043d;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    /* Default spacing for larger devices */
+    margin: 0 1rem;
+    display: inline-block;
+  }
+  
+  /* --------------------------------------------------
+     Footer
+  ----------------------------------------------------- */
+  footer {
+    background-color: #d9043d;
+    text-align: center;
+    padding: 1rem;
+    color: #ffffff;
+  }
+  
+ 
+  .gallery {
+    display: grid;
+    grid-gap: 1rem;
+    margin: 1rem;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 650px; /* fixed max width allowed */
+    display: block;
+    margin: 0 auto;
+    border-bottom: 10px solid #97bf04;
+  }
+  
+  /* --------------------------------------------------
+     Responsive Styles
+  ----------------------------------------------------- */
+  
+  /* For devices less than 768px wide */
+  @media (max-width: 767px) {
+    /* Navigation buttons: square, 95% width of screen, centered */
+    nav a {
+      width: 95%;
+      /* Using aspect-ratio to ensure equal width and height */
+      aspect-ratio: 1 / 1;
+      margin: 0.5rem auto;
+      border: 2px solid #97bf04;
+      /* Center the link text both horizontally and vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Gallery: single column layout */
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* For devices between 768px and 999px wide */
+  @media (min-width: 768px) and (max-width: 999px) {
+    /* Navigation remains a full-width pink bar with centered links (see base styles) */
+  
+    /* Gallery: two columns */
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* The last image (tiger) spans both columns */
+    .gallery img.tiger {
+      grid-column: span 2;
+    }
+  }
+  
+  /* For devices 1000px wide and above */
+  @media (min-width: 1000px) {
+    /* Navigation remains the same as base styles */
+  
+    /* Gallery: three columns */
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    /* The last image (tiger) spans two columns */
+    .gallery img.tiger {
+      grid-column: span 2;
+    }
+}  
